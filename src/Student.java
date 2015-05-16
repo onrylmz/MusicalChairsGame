@@ -116,7 +116,7 @@ public class Student extends Thread
         }
         if(whichRoundWon != 0)
         {
-            System.out.println(getStudentName() + " : " + "I won the game in round " + whichRoundWon + "! :) I sat on " + "chairs " + satChairs.replace(" ", ",").replaceFirst(",", ""));
+            System.out.println(getStudentName() + " : " + "I won the game in round " + whichRoundWon + "! :) I sat on " + "chairs " + satChairs.replace(" ", ",").replaceFirst(",", "") + ".");
         }
         
     }
@@ -146,7 +146,7 @@ public class Student extends Thread
                 break;
             }
             
-            if(game.getWhichRoundExecuted() == 5)
+            if(game.getWhichRoundExecuted() == game.getNumberOfPlayers())
             {
                 setWhichRoundWon(game.getNumberOfRounds());
                 game.barrierReporting.await();
