@@ -96,8 +96,11 @@ public class Teacher extends Thread
                 {
                     System.out.println("");
 
-                    removeOneChair();
-                    game.removeOneChair();
+                    if(game.getChairs().size() != 1)
+                    {
+                        removeOneChair();
+                        game.removeOneChair();
+                    }
                     
                     game.setWhichRoundExecuted();
                     game.setNumberOfCurrentPlayers();
